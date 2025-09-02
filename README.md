@@ -1,12 +1,11 @@
 # Michael Adam — Portfolio
 
-A cloud‑first developer portfolio built with Vue 2 + Vite, styled with a dark/glass theme. Includes a contact form using Supabase and GitHub Pages deployment.
+A cloud‑first developer portfolio built with Vue 2 + Vite, styled with a dark/glass theme. Includes a contact form using EmailJS and GitHub Pages deployment.
 
 ## Tech stack
 - Frontend: Vue 2, Vite, Vue Router
 - Styling: CSS variables, glassmorphism
-- Backend (contact form): Supabase (Postgres)
-- Auth: Supabase Email/Password (optional)
+- Contact form: EmailJS (email service)
 - Deployment: GitHub Pages via Actions
 
 ## Project structure
@@ -15,22 +14,13 @@ portfolio-website/
   src/
     components/       # Hero, AboutMe, Projects, Resume, ContactForm, Login
     router/           # Vue Router (hash history for Pages)
-    lib/supabaseClient.js
     main.js           # mounts app + imports global styles
     style.css         # theme variables, utilities, layout helpers
   vite.config.js      # base: './' for Pages
 ```
 
 ## Prerequisites
-- Node.js 18+ (recommended 20)
-- A Supabase project (only needed for Contact/Login)
-
-## Environment
-Create `portfolio-website/.env` with:
-```
-VITE_SUPABASE_URL=your-project-url
-VITE_SUPABASE_ANON_KEY=your-anon-key
-```
+- Node.js 20+ (required for Vite 7+)
 
 ## Run locally
 ```powershell
@@ -52,6 +42,16 @@ npm run preview
 - Push to `main` → builds `dist` and publishes to Pages
 - Ensure Pages is enabled in repo settings (Source: GitHub Actions)
 
+<<<<<<< HEAD
+## Contact Form Setup (EmailJS)
+1. Go to [emailjs.com](https://emailjs.com) and create a free account
+2. Create an email service (Gmail, Outlook, etc.)
+3. Create an email template
+4. Replace the placeholder values in `src/components/ContactForm.vue`:
+   - `YOUR_SERVICE_ID` with your EmailJS service ID
+   - `YOUR_TEMPLATE_ID` with your email template ID
+   - `YOUR_PUBLIC_KEY` with your EmailJS public key
+=======
 ## Supabase setup (Contact form)
 Create table `contact_messages`:
 ```sql
@@ -69,13 +69,14 @@ alter table public.contact_messages enable row level security;
 create policy anon_insert on public.contact_messages
 for insert to anon with check (true);
 ```
+>>>>>>> parent of 8b077d7 (Signed-off-by: Michael Adam <impartinir@gmail.com>)
 
 ## Editing guidelines
 - Keep components aligned with the `style.css` variables/utilities
 - Use hash routes for Pages compatibility (`createWebHashHistory`)
 
 ## Notable content
-- About/Resume reflect cloud‑first focus (Docker, CI/CD, Laravel)
+- About/Resume reflect cloud‑first focus (CI/CD, Laravel)
 - Projects include Securepoint — spdyn.de (Vue 2, Laravel, MariaDB)
 
 ## License

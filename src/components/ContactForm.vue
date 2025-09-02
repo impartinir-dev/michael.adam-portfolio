@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { getSupabase } from '../lib/supabaseClient'
+import emailjs from '@emailjs/browser'
 
 export default {
   name: 'ContactForm',
@@ -40,15 +40,26 @@ export default {
       this.loading = true
       this.successMessage = ''
       this.errorMessage = ''
+      
       try {
-        const supabase = getSupabase()
-        const { error } = await supabase.from('contact_messages').insert([
-          { name: this.form.name, email: this.form.email, message: this.form.message }
-        ])
-        if (error) throw error
-        this.successMessage = 'Message sent successfully!'
+        // EmailJS configuration - replace with your actual values
+        const serviceId = 'YOUR_SERVICE_ID'
+        const templateId = 'YOUR_TEMPLATE_ID'
+        const publicKey = 'YOUR_PUBLIC_KEY'
+        
+        const templateParams = {
+          from_name: this.form.name,
+          from_email: this.form.email,
+          message: this.form.message,
+          to_name: 'Michael Adam'
+        }
+        
+        await emailjs.send(serviceId, templateId, templateParams, publicKey)
+        
+        this.successMessage = 'Message sent successfully! I\'ll get back to you soon.'
         this.form = { name: '', email: '', message: '' }
       } catch (error) {
+        console.error('EmailJS error:', error)
         this.errorMessage = 'Failed to send message. Please try again later.'
       } finally {
         this.loading = false

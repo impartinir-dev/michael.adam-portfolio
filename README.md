@@ -66,7 +66,7 @@ npm run preview
 - Use hash routes for Pages compatibility (`createWebHashHistory`)
 
 ## Notable content
-- About/Resume reflect cloud‑first focus (Docker, CI/CD, Laravel)
+- About/Resume reflect cloud‑first focus (CI/CD, Laravel)
 - Projects include Securepoint — spdyn.de (Vue 2, Laravel, MariaDB)
 
 ## License

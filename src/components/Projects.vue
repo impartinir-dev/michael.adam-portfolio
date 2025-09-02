@@ -25,12 +25,15 @@ export default {
         {
           id: 'spdyn',
           title: 'Securepoint — spdyn.de (Aug 2024 – Present)',
-          description: 'Full‑stack work on Securepoint’s dynamic DNS platform. Vue 2 frontend, PHP (Laravel) backend, MariaDB.',
+          description: 'Full‑stack work on Securepoint\'s dynamic DNS platform. Vue 2 frontend, PHP (Laravel) backend, MariaDB.',
           link: 'https://spdyn.de'
         },
-        { id: 2, title: 'Project Two', description: 'blank.', link: '#' },
-        { id: 3, title: 'Project Three', description: 'blank.', link: '#' },
-        { id: 4, title: 'Project Four', description: 'blank.', link: '#' }
+        {
+          id: 'portfolio',
+          title: 'Portfolio Website (Dec 2024)',
+          description: 'This portfolio site built with Vue 3 + Vite, glassmorphism design, Supabase contact form, and GitHub Pages deployment.',
+          link: 'https://github.com/impartinir-dev/michael.adam-portfolio'
+        }
       ]
     }
   }

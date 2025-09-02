@@ -6,7 +6,6 @@ A cloud‑first developer portfolio built with Vue 3 + Vite, styled with a dark/
 - Frontend: Vue 3, Vite, Vue Router
 - Styling: CSS variables, glassmorphism
 - Email Service: EmailJS (for GitHub Pages compatibility)
-- Database: Supabase (Postgres) - optional backup
 - Deployment: GitHub Pages via Actions
 
 ## Project structure
@@ -15,7 +14,6 @@ portfolio-website/
   src/
     components/       # Hero, AboutMe, Projects, Resume, ContactForm, Login
     router/           # Vue Router (hash history for Pages)
-    lib/supabaseClient.js
     main.js           # mounts app + imports global styles
     style.css         # theme variables, utilities, layout helpers
   vite.config.js      # base: './' for Pages
@@ -24,15 +22,10 @@ portfolio-website/
 ## Prerequisites
 - Node.js 18+ (recommended 20)
 - EmailJS account (for email functionality)
-- A Supabase project (optional - for database backup)
 
 ## Environment
 Create `portfolio-website/.env` with:
 ```
-# Supabase Configuration (optional - for database backup)
-VITE_SUPABASE_URL=your-project-url
-VITE_SUPABASE_ANON_KEY=your-anon-key
-
 # EmailJS Configuration (required for email functionality)
 VITE_EMAILJS_SERVICE_ID=your-service-id
 VITE_EMAILJS_TEMPLATE_ID=your-template-id
@@ -67,24 +60,6 @@ npm run preview
 3. Create email template with variables: `{{from_name}}`, `{{from_email}}`, `{{message}}`
 4. Get your Service ID, Template ID, and Public Key
 5. Add credentials to your `.env` file
-
-## Supabase setup (Optional - for database backup)
-Create table `contact_messages`:
-```sql
-create table if not exists public.contact_messages (
-  id uuid primary key default gen_random_uuid(),
-  name text not null,
-  email text not null,
-  message text not null,
-  created_at timestamp with time zone default now()
-);
-```
-Optional RLS (allow anonymous inserts only):
-```sql
-alter table public.contact_messages enable row level security;
-create policy anon_insert on public.contact_messages
-for insert to anon with check (true);
-```
 
 ## Editing guidelines
 - Keep components aligned with the `style.css` variables/utilities

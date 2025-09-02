@@ -24,7 +24,6 @@
 
 <script>
 import emailjs from '@emailjs/browser'
-import { getSupabase } from '../lib/supabaseClient'
 
 export default {
   name: 'ContactForm',
@@ -48,7 +47,7 @@ export default {
           from_name: this.form.name,
           from_email: this.form.email,
           message: this.form.message,
-          to_email: 'your-email@gmail.com' // Replace with your email
+          to_email: 'impartinir@gmail.com'
         }
 
         const response = await emailjs.send(
@@ -59,17 +58,6 @@ export default {
         )
 
         if (response.status === 200) {
-          // Also save to Supabase database (optional - for backup/analytics)
-          try {
-            const supabase = getSupabase()
-            await supabase.from('contact_messages').insert([
-              { name: this.form.name, email: this.form.email, message: this.form.message }
-            ])
-          } catch (dbError) {
-            console.warn('Failed to save to database:', dbError)
-            // Don't fail the whole operation if database save fails
-          }
-
           this.successMessage = 'Message sent successfully!'
           this.form = { name: '', email: '', message: '' }
         } else {

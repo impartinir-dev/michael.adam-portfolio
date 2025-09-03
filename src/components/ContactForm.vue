@@ -46,6 +46,14 @@ export default {
         const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
         const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
         const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+        console.log('EmailJS Service ID:', serviceId)
+        console.log('EmailJS Template ID:', templateId)
+        console.log('EmailJS Public Key:', publicKey)
+
+        if (!serviceId || !templateId || !publicKey) {
+          throw new Error('Missing EmailJS environment variables')
+        }
         
         const templateParams = {
           from_name: this.form.name,

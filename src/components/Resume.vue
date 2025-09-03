@@ -93,7 +93,8 @@ export default {
   name: 'Resume',
   methods: {
     downloadResume() {
-      const base = process.env.BASE_URL || '/'
+      const repoName = '/michael.adam-portfolio/'
+      const base = process.env.BASE_URL || repoName
       const link = document.createElement('a')
       link.href = base + 'resume/Michael_Adam_CV.pdf'
       link.download = 'Michael_Adam_CV.pdf'

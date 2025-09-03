@@ -42,7 +42,7 @@ npm run preview
 - Push to `main` → builds `dist` and publishes to Pages
 - Ensure Pages is enabled in repo settings (Source: GitHub Actions)
 
-<<<<<<< HEAD
+
 ## Contact Form Setup (EmailJS)
 1. Go to [emailjs.com](https://emailjs.com) and create a free account
 2. Create an email service (Gmail, Outlook, etc.)
@@ -51,25 +51,7 @@ npm run preview
    - `YOUR_SERVICE_ID` with your EmailJS service ID
    - `YOUR_TEMPLATE_ID` with your email template ID
    - `YOUR_PUBLIC_KEY` with your EmailJS public key
-=======
-## Supabase setup (Contact form)
-Create table `contact_messages`:
-```sql
-create table if not exists public.contact_messages (
-  id uuid primary key default gen_random_uuid(),
-  name text not null,
-  email text not null,
-  message text not null,
-  created_at timestamp with time zone default now()
-);
-```
-Optional RLS (allow anonymous inserts only):
-```sql
-alter table public.contact_messages enable row level security;
-create policy anon_insert on public.contact_messages
-for insert to anon with check (true);
-```
->>>>>>> parent of 8b077d7 (Signed-off-by: Michael Adam <impartinir@gmail.com>)
+
 
 ## Editing guidelines
 - Keep components aligned with the `style.css` variables/utilities

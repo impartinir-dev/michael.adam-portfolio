@@ -1,6 +1,6 @@
 # Michael Adam — Portfolio
 
-A cloud‑first developer portfolio built with Vue 2 + Vite, styled with a dark/glass theme. Includes a contact form using EmailJS and GitHub Pages deployment.
+A cloud‑first developer portfolio built with Vue 3 + Vite, styled with a dark/glass theme. Includes a contact form using EmailJS and GitHub Pages deployment.
 
 ## Tech stack
 - Frontend: Vue 2, Vite, Vue Router

@@ -2,7 +2,7 @@
   <div id="app" class="app-container">
     <header class="site-header">
       <nav class="navbar container">
-        <div class="brand">Michael Adam</div>
+        <router-link to="/" class="brand no-link-style">Michael Adam</router-link>
         <div class="links">
           <router-link to="/" class="nav-link" exact>About Me</router-link>
           <router-link to="/projects" class="nav-link">Projects</router-link>
@@ -30,6 +30,8 @@ export default {
 .site-header { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 .navbar {
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
@@ -40,7 +42,7 @@ export default {
   border: 1px solid rgba(255,255,255,0.12);
 }
 
-.brand { font-weight: 700; letter-spacing: .2px; }
+.brand { font-weight: 700; letter-spacing: .2px; color: white; cursor: pointer; }
 .links { display: flex; gap: 16px; }
 .nav-link {
   color: var(--text);
@@ -52,6 +54,12 @@ export default {
 }
 .nav-link:hover { color: white; background: rgba(255,255,255,0.08); }
 .nav-link.router-link-exact-active { color: white; background: rgba(230,57,70,0.20); }
+
+.no-link-style {
+  color: white;
+  text-decoration: none !important;
+  cursor: pointer;
+}
 
 @media (max-width: 700px) {
   .links { gap: 8px; }

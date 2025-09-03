@@ -93,8 +93,9 @@ export default {
   name: 'Resume',
   methods: {
     downloadResume() {
+      const base = process.env.BASE_URL || '/'
       const link = document.createElement('a')
-      link.href = '/resume/Michael_Adam_CV.pdf'  
+      link.href = base + 'resume/Michael_Adam_CV.pdf'
       link.download = 'Michael_Adam_CV.pdf'
       document.body.appendChild(link)
       link.click()

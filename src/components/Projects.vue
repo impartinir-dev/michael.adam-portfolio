@@ -31,7 +31,7 @@ export default {
         {
           id: 'portfolio',
           title: 'Portfolio Website (Dec 2024)',
-          description: 'This portfolio site built with Vue 3 + Vite, glassmorphism design, Supabase contact form, and GitHub Pages deployment.',
+          description: 'This portfolio site built with Vue 3 + Vite, glassmorphism design, EmailJS contact form, and GitHub Pages deployment.',
           link: 'https://github.com/impartinir-dev/michael.adam-portfolio'
         }
       ]

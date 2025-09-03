@@ -39,7 +39,7 @@
               </li>
               <li>
                 <div class="when">2020 – 2021</div>
-                <div class="what"><strong>Bugenhagen Berufsbildungswerk</strong> — First trial run (Ausbildung) as Fachinformatiker Anwendungsentwicklung (<a href="https://www.bugenhagen.de" target="_blank" rel="noopener">Website</a>)</div>
+                <div class="what"><strong>Bugenhagen Berufsbildungswerk</strong> — Initial Ausbildung as Fachinformatiker Anwendungsentwicklung, paused due to health reasons </div>
               </li>
               <li>
                 <div class="when">07/2018 – 11/2018</div>
@@ -93,7 +93,12 @@ export default {
   name: 'Resume',
   methods: {
     downloadResume() {
-      alert('Download feature will be enabled in the future.')
+      const link = document.createElement('a')
+      link.href = '/resume/Michael_Adam_CV.pdf'  
+      link.download = 'Michael_Adam_CV.pdf'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
     }
   }
 }

@@ -11,7 +11,6 @@
         <div class="stack">
           <span class="chip">Laravel</span>
           <span class="chip">PHP</span>
-          <span class="chip">Docker</span>
           <span class="chip">CI/CD</span>
           <span class="chip">Vue 2</span>
           <span class="chip">Vite</span>
@@ -19,6 +18,7 @@
           <span class="chip">JavaScript</span>
           <span class="chip">HTML</span>
           <span class="chip">CSS</span>
+          <span class="chip">Python</span>
         </div>
         <div class="actions">
           <router-link to="/projects" class="button">See my work</router-link>
@@ -32,9 +32,9 @@
           <h3 style="margin-top: 16px;">Highlights</h3>
           <ul class="bullets">
             <li>Cloud‑oriented backend design with Laravel</li>
-            <li>Containerization with Docker; CI/CD pipelines</li>
+            <li>CI/CD pipelines</li>
             <li>Clean, maintainable TypeScript/Vue 2 frontends</li>
-            <li>Strong fundamentals: HTML, CSS, JS, TS</li>
+            <li>Strong fundamentals: HTML, CSS, JS, TS, Python</li>
           </ul>
         </div>
       </div>
